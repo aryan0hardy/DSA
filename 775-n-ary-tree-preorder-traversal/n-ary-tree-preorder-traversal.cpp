@@ -22,14 +22,13 @@ class Solution {
 public:
     vector<int> ans;
     void helper(Node* root){
-        if (!root)return;
+        if(!root) return;
         ans.push_back(root->val);
-        for(Node* child:root->children){
-            helper(child);
+        for(auto node : root->children){
+            helper(node);
         }
     }
     vector<int> preorder(Node* root) {
-        ans.clear();
         helper(root);
         return ans;
     }
